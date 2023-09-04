@@ -1,14 +1,13 @@
-import {classNames} from "shared/lib/classNames/classNames";
-import cls from './Navbar.module.scss';
-import React from "react";
-import {AppLink, ApplinkTheme} from "shared/ui/AppLink/AppLink";
-import {ThemeSwitcher} from "features/ThemeSwitcher";
+import { classNames } from 'shared/lib/classNames/classNames'
+import cls from './Navbar.module.scss'
+import React, { type ReactElement } from 'react'
+import { AppLink, ApplinkTheme } from 'shared/ui/AppLink/AppLink'
 
 export interface NavbarProps {
     className?: string
 }
 
-export const Navbar = ({className}: NavbarProps) => {
+export const Navbar = ({ className }: NavbarProps): ReactElement => {
     return (
         <div className={classNames(cls.Navbar, {}, [className])}>
             <div className={cls.links}>
@@ -16,5 +15,5 @@ export const Navbar = ({className}: NavbarProps) => {
                 <AppLink theme={ApplinkTheme.INVERTED} to={'/about'}>About</AppLink>
             </div>
         </div>
-    );
-};
+    )
+}
