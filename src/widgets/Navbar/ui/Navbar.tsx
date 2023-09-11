@@ -11,8 +11,7 @@ export const Navbar = ({ className }: NavbarProps): ReactElement => {
     return (
         <div className={classNames(cls.Navbar, {}, [className])}>
             <div className={cls.links}>
-                <AppLink theme={ApplinkTheme.INVERTED} to={'/'} className={cls.mainLink}>Home</AppLink>
-                <AppLink theme={ApplinkTheme.INVERTED} to={'/about'}>About</AppLink>
+
             </div>
         </div>
     )

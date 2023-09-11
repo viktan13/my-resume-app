@@ -11,12 +11,14 @@ export enum ApplinkTheme {
 export interface AppLinkProps extends LinkProps {
     className?: string
     theme?: ApplinkTheme
+    sidebar?: boolean
+    active?: boolean
 }
 
 export const AppLink = (props: AppLinkProps): ReactElement => {
-    const { className, theme = ApplinkTheme.PRIMARY, children, to, ...otherProps } = props
+    const { className, sidebar, active, theme = ApplinkTheme.PRIMARY, children, to, ...otherProps } = props
     return (
-        <Link to={to} className={classNames(cls.AppLink, {}, [className, cls[theme]])} {...otherProps}>
+        <Link to={to} className={classNames(cls.AppLink, { [cls.sidebar]: sidebar, [cls.active]: active }, [className, cls[theme]])} {...otherProps}>
             {children}
         </Link>
     )
