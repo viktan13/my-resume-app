@@ -1,10 +1,12 @@
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './Sidebar.module.scss'
-import React, { type ReactElement, useState } from 'react'
+import React, { type ReactElement, useEffect, useState } from 'react'
 import { ThemeSwitcher } from 'features/ThemeSwitcher'
 import { AppLink, ApplinkTheme } from 'shared/ui/AppLink/AppLink'
 import { v4 as uuidv4 } from 'uuid'
 import { RoutePath } from 'shared/config/routeConfig/routeConfig'
+import { Button, ButtonTheme } from 'shared/ui/Button/Button'
+import { GiHamburgerMenu } from 'react-icons/gi'
 
 export interface SidebarMenuItem {
     path: string
@@ -14,14 +16,20 @@ export interface SidebarMenuItem {
 
 export interface SidebarProps {
     className?: string
+    mobile?: boolean
 }
 
-export const Sidebar = ({ className }: SidebarProps): ReactElement => {
+export const Sidebar = ({ className, mobile }: SidebarProps): ReactElement => {
     const [collapsed, setCollapsed] = useState(false)
     const [active, setActive] = useState('Home')
-    // const toggle = (): undefined => {
-    //     setCollapsed(prev => !prev)
-    // }
+
+    useEffect(() => {
+        setCollapsed(mobile)
+    }, [mobile])
+
+    const toggle = (): undefined => {
+        setCollapsed(prev => !prev)
+    }
 
     const sidebarMenu: SidebarMenuItem[] = [
         { path: RoutePath.home, id: uuidv4(), name: 'Home' },
@@ -38,7 +46,10 @@ export const Sidebar = ({ className }: SidebarProps): ReactElement => {
 
     return (
         <div className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}>
-            {/* <button onClick={toggle}>toggle</button> */}
+            {mobile &&
+                <Button theme={ButtonTheme.CLEAR} onClick={toggle} className={cls.hamburger}>
+                    <GiHamburgerMenu size='2rem' />
+                </Button>}
             <div className={cls.links}>
                 {sidebarMenu.map(el => (
                     <AppLink
