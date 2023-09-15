@@ -3,7 +3,7 @@
   width: var(--sidebar-width);
   background: var(--inverted-bg-color);
   position: relative;
-  transition: width 0.3s, background-color 0.3s;
+  transition: width 0.5s;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,7 +16,8 @@
   color: var(--inverted-primary-color);
   position: absolute;
   left: 15px;
-  top: 10px
+  top: 10px;
+  transition: color 0.8s;
 }
 
 .profilePicture {
@@ -44,23 +45,20 @@
   gap: 15px;
 }
 
+.sidebarContent {
+  width: 100%;
+  transition: width 0.3s;
+  overflow: clip;
+}
+
 .collapsed {
-  width: var(--sidebar-width-collapsed);
-  background: var(--bg-color);
-
-  .links {
-    display: none;
-  }
-
-  .profilePicture {
-    display: none;
-  }
+  width: 0;
 
   .hamburger {
     color: var(--primary-color);
   }
 
-  .themeSwitcher {
-    display: none;
+  .sidebarContent {
+    width: 0;
   }
 }

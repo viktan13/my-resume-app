@@ -55,22 +55,24 @@ export const Sidebar = ({ className, mobile }: SidebarProps): ReactElement => {
                     <GiHamburgerMenu size='2rem' />
                 </Button>}
             <ProfilePicture className={cls.profilePicture}/>
-            <div className={cls.links}>
-                {sidebarMenu.map(el => (
-                    <AppLink
-                        key={el.id}
-                        sidebar
-                        active={el.name === active}
-                        theme={ApplinkTheme.INVERTED}
-                        to={el.path}
-                        onClick={() => { handleClick(el.name) }}
-                    >
-                        {el.name}
-                    </AppLink>
-                ))}
-            </div>
-            <div className={cls.themeSwitcher}>
-                <ThemeSwitcher />
+            <div className={cls.sidebarContent}>
+                <div className={cls.links}>
+                    {sidebarMenu.map(el => (
+                        <AppLink
+                            key={el.id}
+                            sidebar
+                            active={el.name === active}
+                            theme={ApplinkTheme.INVERTED}
+                            to={el.path}
+                            onClick={() => { handleClick(el.name) }}
+                        >
+                            {el.name}
+                        </AppLink>
+                    ))}
+                </div>
+                <div className={cls.themeSwitcher}>
+                    <ThemeSwitcher />
+                </div>
             </div>
         </div>
     )
