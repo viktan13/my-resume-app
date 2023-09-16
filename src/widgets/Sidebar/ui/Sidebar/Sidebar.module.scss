@@ -15,7 +15,7 @@
   margin: 15px;
   color: var(--inverted-primary-color);
   position: absolute;
-  left: 15px;
+  left: 5px;
   top: 10px;
   transition: color 0.8s;
 }
@@ -56,6 +56,10 @@
 
   .hamburger {
     color: var(--primary-color);
+  }
+
+  .themeSwitcher {
+    display: none;
   }
 
   .sidebarContent {

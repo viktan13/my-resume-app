@@ -2,6 +2,7 @@ import React, { type ReactElement, type ReactNode, useMemo, useState } from 'rea
 import { LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext } from '../lib/ThemeContext'
 
 const defaultTheme: Theme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme || Theme.LIGHT
+document.body.className = defaultTheme
 
 export interface ThemeProviderProps {
     children: ReactNode
@@ -16,7 +17,7 @@ const ThemeProvider = ({ children }: ThemeProviderProps): ReactElement => {
     }), [theme])
 
     return (
-        <ThemeContext.Provider value={defaultProps}>.
+        <ThemeContext.Provider value={defaultProps}>
             {children}
         </ThemeContext.Provider>
     )

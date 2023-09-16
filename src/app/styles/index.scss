@@ -3,8 +3,12 @@
 @import "themes/light";
 @import "themes/dark";
 
-.app {
+body {
+  color: var(--primary-color);
   font: var(--font-m);
+}
+
+.app {
   background: var(--bg-color);
   color: var(--primary-color);
   min-height: 100vh;
@@ -21,5 +25,5 @@
 
 .page-wrapper {
   flex-grow: 1;
-  padding: 50px 90px;
+  padding: 30px 90px;
 }
