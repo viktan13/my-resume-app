@@ -3,6 +3,7 @@ import webpack from 'webpack'
 import { type BuildOptions } from './types/config'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
+import Dotenv from 'dotenv-webpack'
 
 export const buildPlugins = ({ paths }: BuildOptions): webpack.WebpackPluginInstance[] => {
     return [
@@ -15,6 +16,7 @@ export const buildPlugins = ({ paths }: BuildOptions): webpack.WebpackPluginInst
             chunkFilename: 'css/[name].[contenthash:8].css'
         }),
         new ReactRefreshWebpackPlugin(),
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new Dotenv()
     ]
 }
