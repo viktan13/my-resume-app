@@ -14,3 +14,17 @@
 .clearInverted {
   color: var(--inverted-primary-color)
 }
+
+.outlined {
+  margin: 0;
+  padding: 6px;
+  border-radius: 8px;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  background-color: transparent;
+}
+
+.outlined:hover {
+  background-color: var(--primary-color);
+  color: white;
+}

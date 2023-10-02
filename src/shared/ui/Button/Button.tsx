@@ -4,7 +4,8 @@ import { type ButtonHTMLAttributes, type ReactElement } from 'react'
 
 export enum ButtonTheme {
     CLEAR = 'clear',
-    CLEAR_INVERTED = 'clearInverted'
+    CLEAR_INVERTED = 'clearInverted',
+    OUTLINED = 'outlined'
 }
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {

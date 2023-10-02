@@ -1,0 +1,23 @@
+.Input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input {
+  border-radius: 8px;
+  border: 1px solid var(--primary-color);
+  padding: 5px;
+}
+
+.input:focus {
+  all: unset;
+  border-radius: 8px;
+  border: 1px solid var(--primary-color);
+  padding: 5px;
+  background-color: white;
+}
+
+.label {
+  margin-right: 5px;
+}
