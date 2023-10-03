@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './LoginModal.module.scss'
-import { type ReactElement } from 'react'
+import { FC, memo, type ReactElement } from 'react'
 import { Modal } from 'shared/ui/Modal/Modal'
 import { LoginForm } from 'features/AuthByUserName/ui/LoginForm/LoginForm'
 
@@ -10,7 +10,7 @@ export interface LoginModalProps {
     onClose?: () => void
 }
 
-export const LoginModal = (props: LoginModalProps): ReactElement => {
+export const LoginModal = memo((props: LoginModalProps): ReactElement => {
     const {
         className,
         isOpen,
@@ -27,4 +27,4 @@ export const LoginModal = (props: LoginModalProps): ReactElement => {
             <LoginForm />
         </Modal>
     )
-}
+})

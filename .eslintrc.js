@@ -33,7 +33,8 @@ module.exports = {
         'react/react-in-jsx-scope': 'off',
         'no-shadow': 'off',
         'import/extensions': 'off',
-        "react-hooks/rules-of-hooks": "error",
-        "react-hooks/exhaustive-deps": "error"
+        'react-hooks/rules-of-hooks': "error",
+        'react-hooks/exhaustive-deps': "error",
+        'react/display-name': 'off'
     }
 }
