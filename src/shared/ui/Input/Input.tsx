@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './Input.module.scss'
-import { type ChangeEvent, type InputHTMLAttributes, type ReactElement, useEffect, useRef } from 'react'
+import { type ChangeEvent, type InputHTMLAttributes, memo, type ReactElement, useEffect, useRef } from 'react'
 
 export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'> {
     className?: string
@@ -10,7 +10,7 @@ export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 
     autoFocus?: boolean
 }
 
-export const Input = (props: InputProps): ReactElement => {
+export const Input = memo((props: InputProps): ReactElement => {
     const {
         className,
         value,
@@ -46,4 +46,4 @@ export const Input = (props: InputProps): ReactElement => {
             />
         </div>
     )
-}
+})

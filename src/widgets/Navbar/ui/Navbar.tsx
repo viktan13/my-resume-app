@@ -46,10 +46,10 @@ export const Navbar = ({ className }: NavbarProps): ReactElement => {
                     Log in
                 </Button>
             </div>
-            <LoginModal
+            {isAuthModal && <LoginModal
                 isOpen={isAuthModal}
                 onClose={onCloseModal}
-            />
+            />}
         </div>
     )
 }

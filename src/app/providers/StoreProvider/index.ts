@@ -7,5 +7,6 @@ export {
 } from './config/createReduxStore'
 
 export type {
-    StateSchema
+    StateSchema,
+    ReduxStoreWithManager
 } from './config/StateSchema'

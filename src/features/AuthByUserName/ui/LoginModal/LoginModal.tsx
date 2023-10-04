@@ -1,8 +1,9 @@
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './LoginModal.module.scss'
-import { FC, memo, type ReactElement } from 'react'
+import { memo, type ReactElement, Suspense } from 'react'
 import { Modal } from 'shared/ui/Modal/Modal'
-import { LoginForm } from 'features/AuthByUserName/ui/LoginForm/LoginForm'
+import { LoginFormAsync } from '../LoginForm/LoginForm.async'
+import { Loader } from 'shared/ui/Loader/Loader'
 
 export interface LoginModalProps {
     className?: string
@@ -24,7 +25,9 @@ export const LoginModal = memo((props: LoginModalProps): ReactElement => {
             isOpen={isOpen}
             onClose={onClose}
         >
-            <LoginForm />
+            <Suspense fallback={<Loader />}>
+                <LoginFormAsync />
+            </Suspense>
         </Modal>
     )
 })
